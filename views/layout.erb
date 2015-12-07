@@ -6,18 +6,16 @@
     <link rel="stylesheet" href="./main.css">
   </head>
   <body>
-        <a href="/login">Login</a>
-        <a href="/login/register">Register</a>
         <% if session[:current_user] %>
-          <p>Hello, <%= session[:current_user].user_name %></p>
+
+        <h1>Hello, <%= session[:current_user].user_name %> <span><a href="/logout">Logout</a></span></h1>
+
+
         <% else %>
           <p>Hello, Guest! Please login or create an account!</p>
+          <a href="/login">Login</a>
+          <a href="/login/register">Register</a>
         <% end %>
-
-        <% if session[:current_user]!=nil %>
-        <a href="/logout">Logout</a>
-        <% end %>
-    <h1>Hello World!</h1>
     <%=yield%>
   </body>
 </html>
