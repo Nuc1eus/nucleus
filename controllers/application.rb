@@ -29,11 +29,19 @@ def authorization_check
   end
 end
 
+def logout
+  session[:current_user]=nil
+end
 
 get '/' do
   redirect '/login'
 end
 
+get '/logout' do
+  logout
+  @message='thank you for visiting, see you soon!'
+  erb :logout
+end
 
 
 end

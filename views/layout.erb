@@ -11,7 +11,11 @@
         <% if session[:current_user] %>
           <p>Hello, <%= session[:current_user].user_name %></p>
         <% else %>
-          <p>Hello , please login or create an account!</p>
+          <p>Hello, Guest! Please login or create an account!</p>
+        <% end %>
+
+        <% if session[:current_user]!=nil %>
+        <a href="/logout">Logout</a>
         <% end %>
     <h1>Hello World!</h1>
     <%=yield%>
