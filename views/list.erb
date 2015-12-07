@@ -1,0 +1,19 @@
+<h1>list page</h1>
+
+<a href="/dash">dashboard home</a>
+
+<% @items.each do |item| %>
+
+ <li> id: <%= item.id %> </li>
+ <li>name:  <%= item.item_name %> </li>
+ <li>location: <%= item.location %> </li>
+
+ <form action="/dash/update/<%= item.id %>" method='post'>
+    <input type="submit" value="update">
+  </form>
+
+  <form action="/dash/sell/<%= item.id %>" method='post'>
+    <input type="submit" value="delete">
+  </form>
+  <hr><hr>
+  <% end %>

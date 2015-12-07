@@ -1,0 +1,18 @@
+body {
+  background-color:rgb(69, 69, 67);
+  color:rgb(19, 12, 33);
+}
+
+a:visited{
+  color:rgb(142, 145, 145);
+}
+
+input {
+  background-color:rgb(142, 145, 145);
+  color:rgb(19, 12, 33);
+
+}
+
+input:placeholder {
+  color:rgb(19, 12, 33);
+}

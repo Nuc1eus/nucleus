@@ -1,0 +1,6 @@
+<h1>logged in successfully!</h1>
+<a href="/dash">go to dashboard</a>
+
+<% @users.each do |user|%>
+<li><%=user.user_name %> : <%= user.password_digest.to_s %></li>
+<%end %>

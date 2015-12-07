@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>nucleus</title>
+    <link rel="stylesheet" href="./main.css">
+  </head>
+  <body>
+        <a href="/login">Login</a>
+        <a href="/login/register">Register</a>
+        <% if session[:current_user] %>
+          <p>Hello, <%= session[:current_user].user_name %></p>
+        <% else %>
+          <p>Hello , please login or create an account!</p>
+        <% end %>
+    <h1>Hello World!</h1>
+    <%=yield%>
+  </body>
+</html>

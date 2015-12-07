@@ -1,0 +1,10 @@
+<h1>you made it to the update page</h1>
+
+<form action="/dash/confirmation" method='post'>
+  <input type="hidden" name="id" value="<%=@item.id%>">
+  <label for="item_name">Item Name:</label>
+  <input type="text" name='name' value='<%= @item.item_name %>'>
+  <label for="location">Location:</label>
+  <input type="text" name='location' value='<%= @item.location %>'>
+  <input type="submit" value="update">
+</form>
