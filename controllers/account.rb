@@ -15,7 +15,7 @@ class AccountsController < ApplicationController
     if user
       p 'made it to if statement of user block'
       session[:current_user]=user
-      redirect '/dash'
+      redirect '/dash'  
 
     else
       p 'made it to the else statement of if user'

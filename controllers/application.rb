@@ -43,5 +43,10 @@ get '/logout' do
   erb :logout
 end
 
+not_found do
+  status 404
+  erb :oops
+end
+
 
 end
