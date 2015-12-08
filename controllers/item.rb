@@ -11,17 +11,14 @@ class ItemsController < ApplicationController
 
   post '/add' do
 
-    @product = Item.new
-    @product.item_name = params[:name]
-    @product.location = params[:location]
-    @product.save
+    @product =Item.create(product_name: params[:product_name],product_description: params[:product_description], product_upc: params[:product_upc], product_number: params[:product_number], product_vendor: params[:product_vendor], unit_price: params[:unit_price], product_image: params[:product_image]);
 
-    @items=Item.all
-    return @items.to_json
+    @products=Item.all
+    return @products.to_json
   end
 
   get '/list' do
-    @items=Item.all
+    @products=Item.all
     erb :list
   end
 
@@ -30,15 +27,13 @@ class ItemsController < ApplicationController
   end
 
   post '/update/:id' do
-    @item=Item.find(params[:id])
+    @product=Item.find(params[:id])
     erb :update
   end
 
   post '/confirmation' do
-    @item=Item.find(params[:id])
-    @item.item_name=params[:name]
-    @item.location=params[:location]
-    @item.save
+    @product =Item.create(product_name: params[:product_name],product_description: params[:product_description], product_upc: params[:product_upc], product_number: params[:product_number], product_vendor: params[:product_vendor], unit_price: params[:unit_price], product_image: params[:product_image]);
+
     erb :confirmation
   end
 

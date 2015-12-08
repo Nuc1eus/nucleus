@@ -34,7 +34,7 @@ class AccountsController < ApplicationController
       return {:message => 'womp, womp... user exists'}.to_json
     end
 
-    user = Account.create( user_name: params[:user_name], password: params[:password])
+    user = Account.create( user_name: params[:user_name], password: params[:password], name: params[:name], phone: params[:phone], email: params[:email])
     session[:current_user]=user
     # redirect '/success'
     @users=Account.all

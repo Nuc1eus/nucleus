@@ -1,4 +1,3 @@
 class Item < ActiveRecord::Base
-  self.table_name='items'
-  :has_one locations;
+  self.table_name='products' 
 end

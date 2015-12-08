@@ -2,17 +2,22 @@
 
 <a href="/dash">dashboard home</a>
 
-<% @items.each do |item| %>
+<% @products.each do |product| %>
 
- <li> id: <%= item.id %> </li>
- <li>name:  <%= item.item_name %> </li>
- <li>location: <%= item.location %> </li>
+ <li> id: <%= product.id %> </li>
+ <li>name:  <%= product.product_name %> </li>
+ <li>description:  <%= product.product_description %> </li>
+ <li>upc:  <%= product.product_upc %> </li>
+ <li>product number:  <%= product.product_number %> </li>
+ <li>vendor:  <%= product.product_vendor %> </li>
+ <li>price:  <%= product.unit_price %> </li>
+ <li>image:  <%= product.product_image %> </li>
 
- <form action="/dash/update/<%= item.id %>" method='post'>
+ <form action="/dash/update/<%= product.id %>" method='post'>
     <input type="submit" value="update">
   </form>
 
-  <form action="/dash/sell/<%= item.id %>" method='post'>
+  <form action="/dash/sell/<%= product.id %>" method='post'>
     <input type="submit" value="delete">
   </form>
   <hr><hr>

@@ -1,10 +1,18 @@
 <h1>you made it to the update page</h1>
 
 <form action="/dash/confirmation" method='post'>
-  <input type="hidden" name="id" value="<%=@item.id%>">
-  <label for="item_name">Item Name:</label>
-  <input type="text" name='name' value='<%= @item.item_name %>'>
-  <label for="location">Location:</label>
-  <input type="text" name='location' value='<%= @item.location %>'>
+  <input type="hidden" name="id" value="<%=@product.id%>">
+  <label for="item_name">Product Name:</label>
+  <input type="text" name='product_name' value='<%= @product.product_name %>'>
+  <label for="product_description">Product Description:</label>
+  <input type="text" name='product_description' value="<%= @product.product_description %>">
+  <label for="product_number">Product Number:</label>
+  <input type="text" name='product_number' value="<%= @product.product_number %>">
+  <label for="product_vendor">Product Vendor:</label>
+  <input type="text" name='product_vendor' value="<%= @product.product_vendor %>">
+  <label for="unit_price">Unit Price:</label>
+  <input type="text" name='unit_price' value="<%= @product.unit_price %>">
+  <label for="product_image">Product Image:</label>
+  <input type="text" name='product_image' value="<%= @product.product_image %>">
   <input type="submit" value="update">
 </form>
