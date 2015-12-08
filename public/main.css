@@ -22,3 +22,13 @@ input {
 input:placeholder {
   color:rgb(19, 12, 33);
 }
+
+select {
+  background-color:rgb(142, 145, 145);
+  color:rgb(19, 12, 33);
+  font-size:2em;
+  border-radius:10px;
+  display:block;
+  margin:10px auto;
+
+}

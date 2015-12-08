@@ -1,7 +1,12 @@
 <form action="/dash/add" method='post'>
 
   <input type="text" name='product_name' placeholder="product name">
-  <input type="text" name='category_id' placeholder="item location">
+  <select>
+    <% @categories.each do |category|  %>
+    <option value="<%= category.category_name %>"><%= category.category_name %></option>
+    <% end %>
+  </select>
+  <input type="text" name='category_id' placeholder="category">
   <input type="text" name='product_name' placeholder="product name">
   <input type="text" name='product_description' placeholder="product description">
   <input type="text" name='product_number' placeholder="product number">
