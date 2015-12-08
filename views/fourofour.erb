@@ -38,7 +38,7 @@
 </div>
 <div class="menu-background"></div>
 
-<div class="all-elements">
+<<div class="all-elements">
     <div class="snap-drawers">
         <div class="snap-drawer snap-drawer-left">
             <div class="sidebar-header">
@@ -92,33 +92,25 @@
         <div class="snap-drawer snap-drawer-right">
             <!-- Disabled on this page -->
         </div>
-
         <div id="content" class="snap-content">
-            <div class="content">
-            <div class="header-clear-large"></div>
-            <!--Page content goes here, fixed elements go above the all elements class-->
-
-                <div class="container material-container">
-                    <h4>hello <%=session[:current_user].user_name%></h4>
-                    <p class="no-bottom">
-
-                      <a href="/dash/add">Add item</a>
-                      <a href="/dash/list">List inventory</a>
-                      <a href="/dash/sell">Sell item</a>
-                    </p>
+            <div class="error-page bg-3 cover-screen">
+                <div class="error-content cover-center">
+                    <div class="boxed-layout">
+                        <h3>404 Error</h3>
+                        <h4>Nothing to see, move along!</h4>
+                        <p>
+                            Let's pretend this never happend and show you some lovely other pages,
+                            like the homepage for example? It's just a 404 error, you know!
+                        </p>
+                        <a href="index.html" class="back-home"><i class="fa fa-home"></i></a>
+                    </div>
                 </div>
-
-                <div class="clear"></div>
-
-                <div class="decoration"></div>
-
-
-                <div class="footer">
-                    <p class="center-text">Copyright 2015. All rights reserved.</p>
-                </div>
+                <div class="overlay bg-black"></div>
+                <a href="index.html" class="left-button"><i class="fa fa-home"></i>Back Home</a>
+                <a href="page-404.html" class="right-button">Boxed Version <i class="fa fa-star"></i></a>
+            </div>
 
             <!-- End of entire page content-->
-            </div>
         </div>
     </div>
     <a href="#" class="back-to-top-badge"><i class="fa fa-caret-up"></i>Back to top</a>
