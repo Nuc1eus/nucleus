@@ -115,14 +115,23 @@
 
                   <% @categories.each do |category| %>
                     <li><%= category.category_name %></li>
+                      <li><%= category.category_info %></li>
+                        <li><%= category.category_image %></li>
                   <% end %>
-                  
+
 
                   <form action="/categories" method="post">
                   <div >
                       <input onfocus="if (this.value=='Category Name') this.value = ''" onblur="if (this.value=='') this.value = 'Category Name'" type="text" value="Category Name" name='category_name'>
                   </div>
 
+                  <div >
+                      <input onfocus="if (this.value=='Category Description') this.value = ''" onblur="if (this.value=='') this.value = 'Category Description'" type="text" value="Category Description" name='category_info'>
+                  </div>
+
+                  <div >
+                      <input onfocus="if (this.value=='Category Image URL') this.value = ''" onblur="if (this.value=='') this.value = 'Category Image URL'" type="text" value="Category Image URL" name='category_image'>
+                  </div>
 
                   <input type="submit" class="pageapp-signup-button button button-small button-blue button-fullscreen" value="Add Category">
                 </form>

@@ -9,7 +9,9 @@ CREATE TABLE locations (
 
 CREATE TABLE catergories (
   id SERIAL PRIMARY KEY,
-  category_name  VARCHAR(255)
+  category_name  VARCHAR(255),
+  category_info VARCHAR(255),
+  category_image VARCHAR(255)
 );
 
 CREATE TABLE products (
@@ -18,17 +20,17 @@ CREATE TABLE products (
   product_name VARCHAR(255),
   product_description VARCHAR(255),
   product_upc VARCHAR(255),
-  product_number NUMERIC,
+  product_number INTEGER,
   product_vendor VARCHAR(255),
-  unit_price  NUMERIC,
+  unit_price  INTEGER,
   product_image VARCHAR(255),
-  qty NUMERIC
+  product_qty INTEGER
 );
 
 CREATE TABLE location_quanities (
   id INTEGER REFERENCES locations(id),
   product_id INTEGER REFERENCES products(id),
-  qty NUMERIC
+  qty INTEGER
 );
 
 CREATE TABLE accounts (
