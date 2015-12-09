@@ -5,7 +5,17 @@ class ItemsController < ApplicationController
     erb :dash
   end
 
-  
+  get '/add' do
+    erb :add
+  end
+
+  post '/add' do
+
+    @product =Item.create(product_name: params[:product_name],product_description: params[:product_description], product_upc: params[:product_upc], product_number: params[:product_number], product_vendor: params[:product_vendor], unit_price: params[:unit_price], product_image: params[:product_image]);
+
+    @products=Item.all
+    return @products.to_json
+  end
 
   get '/list' do
     @products=Item.all
@@ -22,7 +32,7 @@ class ItemsController < ApplicationController
   end
 
   post '/confirmation' do
-    @product =Item.update(params[:id],'product_name'=>params[:product_name],'product_description'=> params[:product_description], 'product_upc'=> params[:product_upc], 'product_number'=> params[:product_number], 'product_vendor'=> params[:product_vendor], 'unit_price'=> params[:unit_price], product_image: params[:product_image]);
+    @product =Item.create(product_name: params[:product_name],product_description: params[:product_description], product_upc: params[:product_upc], product_number: params[:product_number], product_vendor: params[:product_vendor], unit_price: params[:unit_price], product_image: params[:product_image]);
 
     erb :confirmation
   end
@@ -31,7 +41,6 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @item.destroy
     p 'item destroyed'
-    erb :sell
   end
 
 
