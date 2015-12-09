@@ -113,10 +113,17 @@
 								<div class="container material-container">
 
 
-                  <form action="/dash/add/categories" method='post'>
-                    <input type="text" name='category_name'>
-                    <input type="submit">
-                  </form>
+
+                  <form action="/dash/add/categories" method="post">
+                  <div >
+                      <input onfocus="if (this.value=='Category Name') this.value = ''" onblur="if (this.value=='') this.value = 'Category Name'" type="text" value="Category Name" name='category_name'>
+                  </div>
+
+
+
+                  <input type="submit" class="pageapp-signup-button button button-small button-blue button-fullscreen" value="Add Category">
+                </form>
+
 
                   <a class="center" href="/dash">Cancel</a>
                 </div>
