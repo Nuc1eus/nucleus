@@ -121,6 +121,7 @@
 
                       <a href="#" class="activity-item-toggle"><i class="fa fa-plus"></i></a>
                       <div class="activity-item-detail">
+                        <!-- item quantity goes here -->
                         <%= product.product_description %> <%= product.product_upc %> <%= product.product_number %>
                         <form action="/dash/update/<%= product.id %>" method='post'>
                            <input class="button button-blue button-xs"type="submit" value="update">

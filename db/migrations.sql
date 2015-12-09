@@ -21,7 +21,8 @@ CREATE TABLE products (
   product_number NUMERIC,
   product_vendor VARCHAR(255),
   unit_price  NUMERIC,
-  product_image VARCHAR(255)
+  product_image VARCHAR(255),
+  qty NUMERIC
 );
 
 CREATE TABLE location_quanities (
