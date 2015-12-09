@@ -2,7 +2,6 @@
 
 <div id="preloader">
 	<div id="status">
-        <div class="preloader-logo"></div>
         <h3 class="center-text">Welcome</h3>
         <p class="center-text smaller-text">
             We're loading the content, give us a second. This won't take long!
@@ -14,7 +13,8 @@
 
 <div id="header-fixed" class="left-sidebar">
     <a class="open-left-sidebar" href="#"><i class="fa fa-navicon"></i></a>
-    <a class="header-logo" href="index.html"></a>
+		<div class="open-left-sidebar-logo" href="#">Nucleus</div>
+    <a class="open-right-sidebar" href="#"><i class="fa fa-qrcode"></i></a>
 </div>
 
 <!-- Ball Footer Menu -->
@@ -24,17 +24,20 @@
         <i class="fa fa-ellipsis-v"></i>
     </a>
     <a href="#" class="footer-menu-close">
-        <em href="#" class="footer-menu-open-text">Navigation</em>
-        <i class="bg-red-dark fa fa-times"></i>
+        <i class="fa fa-times"></i>
     </a>
     <a href="/dash/add" class="footer-menu-item fm-1">
         <em>Add Item</em>
-        <i class="bg-blue-dark fa fa-mobile"></i>
+        <i class="bg-blue-dark fa fa-plus-circle"></i>
     </a>
     <a href="/dash/search" class="footer-menu-item fm-2">
         <em>Search</em>
-        <i class="bg-night-dark fa fa-envelope-o"></i>
+        <i class="bg-night-dark fa fa-search"></i>
     </a>
+		<a href="/dash/search" class="footer-menu-item fm-3">
+				<em>Scan</em>
+				<i class="bg-night-dark fa fa-qrcode"></i>
+		</a>
 </div>
 <div class="menu-background"></div>
 
@@ -43,7 +46,7 @@
         <div class="snap-drawer snap-drawer-left">
             <div class="sidebar-header">
                 <div class="sidebar-header-logo">
-                    <a href="index.html"></a>
+                  <h1 class="user_name">@<%=session[:current_user].user_name%></h1>
                 </div>
                 <div class="overlay"></div>
             </div>
@@ -53,37 +56,37 @@
 
                 <div>
                     <a class="menu-item" href="/dash">
-                        <i class="bg-red-dark fa fa-home"></i>
+                        <i class="fa fa-home"></i>
                         <em>Dashboard</em>
                     </a>
                 </div>
 								<div class="has-submenu">
 										<a class="menu-item" href="/dash/list">
-												<i class="bg-green-dark fa fa-cog"></i>
+												<i class="fa fa-list"></i>
 												<em>Items</em>
 										</a>
 								</div>
                 <div class="has-submenu">
                     <a class="menu-item" href="/categories">
-                        <i class="bg-green-dark fa fa-cog"></i>
+                        <i class="fa fa-database"></i>
                         <em>Categories</em>
                     </a>
                 </div>
                 <div>
                     <a class="menu-item" href="#">
-                        <i class="bg-blue-dark fa fa-navicon"></i>
+                        <i class="fa fa-map-marker"></i>
                         <em>Locations</em>
                     </a>
                 </div>
                 <div>
                     <a class="menu-item" href="/settings">
-                        <i class="bg-yellow-dark fa fa-camera-retro"></i>
+                        <i class="fa fa-cog"></i>
                         <em>Settings</em>
                     </a>
                 </div>
                 <div>
                     <a class="menu-item" href="/logout">
-                        <i class="bg-yellow-dark fa fa-camera-retro"></i>
+                        <i class="fa fa-sign-out bottom"></i>
                         <em>Logout</em>
                     </a>
                 </div>
@@ -104,14 +107,12 @@
             <div class="header-clear-large"></div>
             <!--Page content goes here, fixed elements go above the all elements class-->
 
-                <div class="container material-container">
-                    <h4>hello <%=session[:current_user].user_name%></h4>
-                    <p class="no-bottom">
 
-                      <a href="/dash/add">Add item</a>
-                      <a href="/dash/list">List inventory</a>
-                      <a href="/dash/sell">Sell item</a>
-                    </p>
+
+								<div class="container material-container">
+                    <h4>Welcome <%=session[:current_user].name%></h4>
+<a href="/dash/add" class="button button-dark">Add Item</a> <a href="/dash/list" class="button button-dark">List</a> <a href="/dash/sell" class="button button-dark">Sell</a>
+
                 </div>
 
                 <div class="clear"></div>

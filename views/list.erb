@@ -1,24 +1,181 @@
-<h1>list page</h1>
+  <body class="left-sidebar">
 
-<a href="/dash">dashboard home</a>
+  <div id="preloader">
+  	<div id="status">
+          <h3 class="center-text">Welcome</h3>
+          <p class="center-text smaller-text">
+              We're loading the content, give us a second. This won't take long!
+          </p>
+      </div>
+  </div>
 
-<% @products.each do |product| %>
+  <div class="gallery-fix"></div> <!-- Important for all pages that have galleries or portfolios -->
 
- <li> id: <%= product.id %> </li>
- <li>name:  <%= product.product_name %> </li>
- <li>description:  <%= product.product_description %> </li>
- <li>upc:  <%= product.product_upc %> </li>
- <li>product number:  <%= product.product_number %> </li>
- <li>vendor:  <%= product.product_vendor %> </li>
- <li>price:  <%= product.unit_price %> </li>
- <li>image:  <%= product.product_image %> </li>
+  <div id="header-fixed" class="left-sidebar">
+      <a class="open-left-sidebar" href="#"><i class="fa fa-navicon"></i></a>
+  		<div class="open-left-sidebar-logo" href="#">Nucleus</div>
+      <a class="open-right-sidebar" href="#"><i class="fa fa-qrcode"></i></a>
+  </div>
 
- <form action="/dash/update/<%= product.id %>" method='post'>
-    <input type="submit" value="update">
-  </form>
+  <!-- Ball Footer Menu -->
 
-  <form action="/dash/sell/<%= product.id %>" method='post'>
-    <input type="submit" value="delete">
-  </form>
-  <hr><hr>
-  <% end %>
+  <div class="footer-menu">
+      <a href="#" class="footer-menu-open">
+          <i class="fa fa-ellipsis-v"></i>
+      </a>
+      <a href="#" class="footer-menu-close">
+          <i class="fa fa-times"></i>
+      </a>
+      <a href="/dash/add" class="footer-menu-item fm-1">
+          <em>Add Item</em>
+          <i class="bg-blue-dark fa fa-plus-circle"></i>
+      </a>
+      <a href="/dash/search" class="footer-menu-item fm-2">
+          <em>Search</em>
+          <i class="bg-night-dark fa fa-search"></i>
+      </a>
+  		<a href="/dash/search" class="footer-menu-item fm-3">
+  				<em>Scan</em>
+  				<i class="bg-night-dark fa fa-qrcode"></i>
+  		</a>
+  </div>
+  <div class="menu-background"></div>
+
+  <div class="all-elements">
+      <div class="snap-drawers">
+          <div class="snap-drawer snap-drawer-left">
+              <div class="sidebar-header">
+                  <div class="sidebar-header-logo">
+                    <h1 class="user_name">@<%=session[:current_user].user_name%></h1>
+                  </div>
+                  <div class="overlay"></div>
+              </div>
+
+
+              <div class="sidebar-menu half-bottom">
+
+                  <div>
+                      <a class="menu-item" href="/dash">
+                          <i class="fa fa-home"></i>
+                          <em>Dashboard</em>
+                      </a>
+                  </div>
+  								<div class="has-submenu">
+  										<a class="menu-item" href="/dash/list">
+  												<i class="fa fa-list"></i>
+  												<em>Items</em>
+  										</a>
+  								</div>
+                  <div class="has-submenu">
+                      <a class="menu-item" href="/categories">
+                          <i class="fa fa-database"></i>
+                          <em>Categories</em>
+                      </a>
+                  </div>
+                  <div>
+                      <a class="menu-item" href="#">
+                          <i class="fa fa-map-marker"></i>
+                          <em>Locations</em>
+                      </a>
+                  </div>
+                  <div>
+                      <a class="menu-item" href="/settings">
+                          <i class="fa fa-cog"></i>
+                          <em>Settings</em>
+                      </a>
+                  </div>
+                  <div>
+                      <a class="menu-item" href="/logout">
+                          <i class="fa fa-sign-out bottom"></i>
+                          <em>Logout</em>
+                      </a>
+                  </div>
+
+              </div>
+
+
+          </div>
+
+          <!--Right Sidebar -->
+
+          <div class="snap-drawer snap-drawer-right">
+              <!-- Disabled on this page -->
+          </div>
+
+          <div id="content" class="snap-content">
+              <div class="content">
+              <div class="header-clear-large"></div>
+              <!--Page content goes here, fixed elements go above the all elements class-->
+
+
+
+                      <% @products.each do |product| %>
+                      <div class="activity-item material-container">
+                        <img class="activity-item-image" src="<%= product.product_image %>" alt="img">
+                        <h5><strong><%= product.product_name %></strong> - <%= product.product_vendor %></h5>
+                        <em><i class="fa fa-dollar"></i><%= product.unit_price %></em>
+
+
+
+                        <a href="#" class="activity-item-toggle"><i class="fa fa-plus"></i></a>
+                        <div class="activity-item-detail">
+                          <%= product.product_description %> <%= product.product_upc %> <%= product.product_number %>
+                          <form action="/dash/update/<%= product.id %>" method='post'>
+                             <input class="button button-blue button-xs"type="submit" value="update">
+                           </form>
+
+                           <form action="/dash/sell/<%= product.id %>" method='post'>
+                             <input class="button button-blue button-xs"type="submit" value="delete">
+                           </form>
+
+                        </div>
+                    </div>
+                    <% end %>
+
+                  <div class="clear"></div>
+
+                  <div class="decoration"></div>
+
+
+                  <div class="footer">
+                      <p class="center-text">Copyright 2015. All rights reserved.</p>
+                  </div>
+
+              <!-- End of entire page content-->
+              </div>
+          </div>
+      </div>
+      <a href="#" class="back-to-top-badge"><i class="fa fa-caret-up"></i>Back to top</a>
+  </div>
+
+  <!--Fly up share box and notifications go here -->
+  <!--These are the only features that should be placed outside the all-elements class-->
+
+  <div class="top-notification-1 top-notification bg-blue-dark">
+      <h4>Did you know?</h4>
+      <p>
+          Easy way to make sure your messages get read!
+      </p>
+      <a href="#" class="close-top-notification"><i class="fa fa-times"></i></a>
+  </div>
+  <div class="bottom-notification-1 bottom-notification bg-green-dark">
+      <h4>Did you know?</h4>
+      <p>
+          Easy way to make sure your messages get read!
+      </p>
+      <a href="#" class="close-bottom-notification"><i class="fa fa-times"></i></a>
+  </div>
+  <div class="bottom-notification-2 bottom-notification bg-orange-dark timeout-notification">
+      <h4>Timeout: 5 Seconds</h4>
+      <p>
+          I'll go away on my own after a few seconds!
+      </p>
+  </div>
+  <div class="top-notification-2 top-notification bg-red-dark timeout-notification">
+      <h4>Timeout: 5 Seconds</h4>
+      <p>
+          I'll go away on my own after a few seconds!
+      </p>
+  </div>
+
+  </body>

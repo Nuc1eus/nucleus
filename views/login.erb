@@ -2,7 +2,6 @@
 
 <div id="preloader">
 	<div id="status">
-        <div class="preloader-logo"></div>
         <h3 class="center-text">Welcome</h3>
         <p class="center-text smaller-text">
             We're loading the content, give us a second. This won't take long!
@@ -22,14 +21,15 @@
                         <form action="/login" method="post">
                         <div class="pageapp-login-field">
                             <i class="fa fa-user"></i>
-                            <input type="text" value="user_name" onfocus="if (this.value=='user_name') this.value = ''" onblur="if (this.value=='') this.value = 'user_name'" name="user_name">
+                            <input type="text" value="Username" onfocus="if (this.value=='Username') this.value = ''" onblur="if (this.value=='') this.value = 'Username'" name="user_name">
                         </div>
                         <div class="pageapp-login-field">
                             <i class="fa fa-lock"></i>
                             <input type="password" value="password" onfocus="if (this.value=='password') this.value = ''" onblur="if (this.value=='') this.value = 'password'" name="password">
                         </div>
-                        <input type="submit" class="pageapp-login-button button button-small button-green button-fullscreen">
+                        <input type="submit" class="pageapp-login-button button button-small button-blue button-fullscreen" value="Login">
                       </form>
+												<a href="/login/register" class="center">Sign-Up</a>
                     </div>
                 </div>
                 <div class="overlay bg-black"></div>
