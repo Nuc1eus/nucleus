@@ -109,15 +109,18 @@
             <!--Page content goes here, fixed elements go above the all elements class-->
 
 
+  <% @categories.each do |category| %>
+<div class="container material-container">
+    <li><%= category.category_name %></li>
+      <li><%= category.category_info %></li>
+        <li><%= category.category_image %></li>
+</div>
+  <% end %>
+
+
 
 								<div class="container material-container">
 
-
-                  <% @categories.each do |category| %>
-                    <li><%= category.category_name %></li>
-                      <li><%= category.category_info %></li>
-                        <li><%= category.category_image %></li>
-                  <% end %>
 
 
                   <form action="/categories" method="post">
