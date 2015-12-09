@@ -12,6 +12,10 @@
   font-weight:500px;
   font-size: 30px;
 }
+.sidebar-header-logo h3 {
+  color: #fff;
+  font-size: 12px;
+}
 #header-fixed{
     opacity:1;
     position:fixed;
@@ -764,8 +768,25 @@ font-weight: bold;
     -webkit-box-shadow: 0 2px 5px 1px rgba(0,0,0,0.2)!important;
             box-shadow: 0 2px 5px 1px rgba(0,0,0,0.2)!important;
     background-color:#FFFFFF;
-    padding:20px;
-    margin-bottom:30px!important;
+    padding:10px;
+    margin-bottom:10px!important;
+}
+
+.material-container input {
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+}
+.material-container select {
+  font-size: 20px;
+    width: 100%;
+    margin-top: 15px;
+    height: 30px;
+    border-bottom: 1px solid #ccc;
+}
+
+.material-container .pageapp-signup-button {
+  margin-top: 30px;
 }
 
 .no-bottom-material{

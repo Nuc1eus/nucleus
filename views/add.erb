@@ -65,7 +65,8 @@
         <div class="snap-drawer snap-drawer-left">
             <div class="sidebar-header">
                 <div class="sidebar-header-logo">
-                  <h1 class="user_name">@<%=session[:current_user].user_name%></h1>
+                  <h1 class="user_name"><%=session[:current_user].user_name%></h1>
+                  <h3><%=session[:current_user].email%></h3>
                 </div>
                 <div class="overlay"></div>
             </div>
@@ -165,7 +166,7 @@
                   <input type="submit" class="pageapp-signup-button button button-small button-blue button-fullscreen" value="Add Item">
                 </form>
 
-                  <a href="/dash">Cancel</a>
+                  <a class="center" href="/dash">Cancel</a>
                 </div>
 
                 <div class="clear"></div>
