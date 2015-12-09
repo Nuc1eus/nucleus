@@ -3,17 +3,17 @@
 <a href="/dash">dashboard home</a>
 
 <% @products.each do |product| %>
- <li> id: <%= product.id %> </li>
- <li>name:  <%= product.product_name %> </li>
- <li>description:  <%= product.product_description %> </li>
- <li>upc:  <%= product.product_upc %> </li>
- <li>product number:  <%= product.product_number %> </li>
- <li>vendor:  <%= product.product_vendor %> </li>
- <li>price:  <%= product.unit_price %> </li>
- <li>image:  <%= product.product_image %> </li>
-  <%= if product.category_id %>
-    <li>type: <%= Category.find(product.category_id).category_name %></li>
-  <% end %>
+   <li> id: <%= product.id %> </li>
+   <li>name:  <%= product.product_name %> </li>
+   <li>description:  <%= product.product_description %> </li>
+   <li>upc:  <%= product.product_upc %> </li>
+   <li>product number:  <%= product.product_number %> </li>
+   <li>vendor:  <%= product.product_vendor %> </li>
+   <li>price:  <%= product.unit_price %> </li>
+   <li>image:  <%= product.product_image %> </li>
+   <!-- <%= if product.category_id %>
+     <li>type: <%= Category.find(product.category_id).category_name %></li>
+   <% end %> -->
 
 
  <form action="/dash/update/<%= product.id %>" method='post'>

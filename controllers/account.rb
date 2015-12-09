@@ -1,3 +1,4 @@
+#mapped to '/login'
 class AccountsController < ApplicationController
 
   get 'not_authorized' do
@@ -9,7 +10,7 @@ class AccountsController < ApplicationController
   end
 
   post '/' do
-  
+
 
     user = Account.authenticate(params[:user_name],params[:password])
     # binding.pry
@@ -53,5 +54,6 @@ class AccountsController < ApplicationController
   get '/incorrect' do
     erb :incorrect
   end
+
 
 end
