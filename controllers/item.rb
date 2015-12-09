@@ -23,8 +23,9 @@ class ItemsController < ApplicationController
   end
 
   get '/list' do
+    authorization_check
     @products=Item.all
-
+    binding.pry
     erb :list
   end
 
