@@ -10,7 +10,6 @@ class ItemsController < ApplicationController
   get '/add' do
     authorization_check
     @categories=Category.all
-    # binding.pry
     erb :add
   end
 
@@ -25,7 +24,6 @@ class ItemsController < ApplicationController
   get '/list' do
     authorization_check
     @products=Item.all
-    binding.pry
     erb :list
   end
 
