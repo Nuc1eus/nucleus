@@ -23,6 +23,12 @@
 
 <title>Nucleus</title>
 
+<% if session[:current_user] %>
+<p>Hello, <%= session[:current_user].user_name %></p>
+<% else %>
+<p>Hello , Guest! Please login or register</p>
+<% end %>
+
 <link href="styles/style.css"           rel="stylesheet" type="text/css">
 <link href="styles/framework.css"       rel="stylesheet" type="text/css">
 <link href="styles/font-awesome.css"    rel="stylesheet" type="text/css">
