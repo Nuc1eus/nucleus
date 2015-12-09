@@ -12,7 +12,6 @@ class CategoriesController < ApplicationController
       @category.category_name=params[:category_name]
       @category.save
       @categories=Category.all
-      binding.pry
       return @categories.to_json
 
     end
