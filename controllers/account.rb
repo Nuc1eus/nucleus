@@ -23,7 +23,7 @@ class AccountsController < ApplicationController
 
 
 
-             redircet '/login/redirect'
+             redirect '/login/redirect'
     end
   end
 
