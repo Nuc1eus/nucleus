@@ -349,7 +349,7 @@ textarea{
 .color-green-dark{color: #2abb67;}
 
 .bg-blue-light{background-color: #3498db!important;}
-.bg-blue-dark{background-color: #2980b9!important;}
+.bg-blue-dark{background-color: #0E4D9A!important;}
 .bg-hover-blue-light:hover{background-color: #3498db!important; color:#FFFFFF!important; transition:all 200ms ease;}
 .bg-hover-blue-dark:hover{background-color: #2980b9!important; color:#FFFFFF!important; transition:all 200ms ease;}
 .color-blue-light{color: #3498db;}
@@ -2794,6 +2794,7 @@ ul.tabs li.active-tab{
     padding:8px 18px;
     margin-bottom:15px;
     margin-right:12px;
+		border-radius: 4px;
 }
 
 .button-icon i{
@@ -2934,8 +2935,8 @@ ul.tabs li.active-tab{
 .button-green:hover{	background-color:#2ecc71;}
 
 .blue-3d{				padding-top:5px; padding-bottom:5px; border-bottom:solid 4px #194e70;}
-.button-blue{			background-color:#2980b9; color:#FFFFFF;}
-.button-blue:hover{		background-color:#3498db;}
+.button-blue{			background-color:#0E4D9A; color:#FFFFFF;	padding: 15px;}
+.button-blue:hover{		background-color:#A7A7A7;}
 
 .magenta-3d{			padding-top:5px; padding-bottom:5px; border-bottom:solid 4px #602e75;}
 .button-magenta{		background-color:#8e44ad; color:#FFFFFF;}
@@ -4951,10 +4952,11 @@ ul.tabs li.active-tab{
 /*--------------------*/
 
 .boxed-layout{
-    background-color:rgba(255,255,255,1);
+    background-color:#F5F5F5;
     padding:30px;
-    -webkit-box-shadow: 0 2px 5px 1px rgba(0,0,0,0.2)!important;
-            box-shadow: 0 2px 5px 1px rgba(0,0,0,0.2)!important;
+		border-radius: 4px;
+    -webkit-box-shadow: 0 2px 5px 1px rgba(0,0,0,0.7)!important;
+            box-shadow: 0 2px 5px 1px rgba(0,0,0,0.7)!important;
 }
 
 .date-years, date-years em{
@@ -5253,7 +5255,7 @@ ul.tabs li.active-tab{
 }
 
 .pageapp-login input:focus{
-    border-bottom:solid 1px #27ae60!important;
+    border-bottom:solid 1px #002e77!important;
     transition:all 200ms ease;
 }
 
@@ -5394,7 +5396,7 @@ ul.tabs li.active-tab{
 }
 
 .pageapp-signup input:focus{
-    border-bottom:solid 1px #27ae60!important;
+    border-bottom:solid 1px #0E4D9A!important;
     transition:all 200ms ease;
 }
 
