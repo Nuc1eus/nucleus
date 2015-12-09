@@ -2,6 +2,7 @@
 class LocationsController < ApplicationController
   get '/' do
     authorization_check
+    @locations=Location.all
     erb :locations
   end
 
@@ -13,7 +14,7 @@ class LocationsController < ApplicationController
     @location.sub_location=params[:sub_location]
     @location.save
     @locations=Location.all
-    return @locations.to_json
+    redirect '/locations'
   end
 
 end
