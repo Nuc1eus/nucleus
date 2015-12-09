@@ -4,6 +4,8 @@ CREATE DATABASE nucleus;
 CREATE TABLE locations (
   id SERIAL PRIMARY KEY,
   location_name VARCHAR(255),
+  location_desc VARCHAR(255),
+  location_image VARCHAR(255),
   sub_location  VARCHAR(255)
 );
 
