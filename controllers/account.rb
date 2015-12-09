@@ -9,6 +9,7 @@ class AccountsController < ApplicationController
   end
 
   post '/' do
+  
 
     user = Account.authenticate(params[:user_name],params[:password])
     # binding.pry
@@ -20,10 +21,7 @@ class AccountsController < ApplicationController
 
     else
       p 'made it to the else statement of if user'
-
-
-
-             redirect '/login/redirect'
+      erb :incorrect
     end
   end
 

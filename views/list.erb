@@ -3,7 +3,7 @@
 <a href="/dash">dashboard home</a>
 
 <% @products.each do |product| %>
-
+  <%binding.pry %>
  <li> id: <%= product.id %> </li>
  <li>name:  <%= product.product_name %> </li>
  <li>description:  <%= product.product_description %> </li>
@@ -12,6 +12,7 @@
  <li>vendor:  <%= product.product_vendor %> </li>
  <li>price:  <%= product.unit_price %> </li>
  <li>image:  <%= product.product_image %> </li>
+ <li>type: <%= Category.find(product.category_id).category_name %></li>
 
  <form action="/dash/update/<%= product.id %>" method='post'>
     <input type="submit" value="update">

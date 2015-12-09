@@ -19,6 +19,7 @@ class ItemsController < ApplicationController
 
   get '/list' do
     @products=Item.all
+  
     erb :list
   end
 
