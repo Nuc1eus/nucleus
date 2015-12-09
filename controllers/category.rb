@@ -3,7 +3,7 @@
 class CategoriesController < ApplicationController
   get '/' do
     @categories=Category.all
-    erb :add_category
+    erb :categories
   end
 
     post '/' do
