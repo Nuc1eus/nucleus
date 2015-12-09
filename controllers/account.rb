@@ -15,12 +15,15 @@ class AccountsController < ApplicationController
     if user
       p 'made it to if statement of user block'
       session[:current_user]=user
-      redirect '/dash'
+       redirect '/dash'
+
 
     else
       p 'made it to the else statement of if user'
 
-      redirect '/login/incorrect'
+
+
+             redircet '/login/redirect'
     end
   end
 
@@ -31,7 +34,7 @@ class AccountsController < ApplicationController
   post '/register' do
 
     if does_user_exist(params[:user_name]) == true
-      return {:message => 'womp, womp... user exists'}.to_json
+      return {:message => 'womp, womp... user exists',:user_name=>params[:user_name]}.to_json
     end
 
     user = Account.create( user_name: params[:user_name], password: params[:password], name: params[:name], phone: params[:phone], email: params[:email])
