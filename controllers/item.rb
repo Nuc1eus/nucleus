@@ -2,10 +2,12 @@ class ItemsController < ApplicationController
 
 
   get '/' do
+    authorization_check
     erb :dash
   end
 
   get '/add' do
+    authorization_check
     erb :add
   end
 
@@ -19,7 +21,7 @@ class ItemsController < ApplicationController
 
   get '/list' do
     @products=Item.all
-  
+
     erb :list
   end
 
