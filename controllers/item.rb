@@ -29,21 +29,24 @@ class ItemsController < ApplicationController
   end
 
   get '/update/:id' do
-    binding.pry
-    p 'hello world!'
+    p params
+    @product = Item.find(params[:id])
+    erb :update
   end
 
-  post '/update/:id' do
+  post '/update' do
+    p params
     @product = Item.find(params[:id])
-    @product.product_name=params[:product_name]
-    @product.product_description=params[:product_description]
-    @product.product_upc=params[:product_upc]
-    @product.product_number=params[:product_number]
-    @product.product_vendor=params[:product_vendor]
-    @product.unit_price=params[:unit_price]
-    @product.product_image=params[:product_image]
-    @product.product_qty=params[:product_qty]
+    @product.product_name = params[:product_name]
+    @product.product_description = params[:product_description]
+    @product.product_upc = params[:product_upc]
+    @product.product_number = params[:product_number]
+    @product.product_vendor = params[:product_vendor]
+    @product.unit_price = params[:unit_price]
+    @product.product_image = params[:product_image]
+    @product.product_qty = params[:product_qty]
     @product.save
+    erb :list
   end
 
   post '/confirmation' do
@@ -54,7 +57,7 @@ class ItemsController < ApplicationController
   post '/sell/:id' do
     @item = Item.find(params[:id])
     @item.destroy
-    p 'item destroyed'
+    redirect '/dash/list'
   end
 
 end
