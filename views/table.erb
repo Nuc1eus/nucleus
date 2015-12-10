@@ -1,0 +1,28 @@
+<table style="width:100%">
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr>
+</table>
+
+<% @products.each do |product| %>
+<div class="activity-item material-container">
+  <img class="activity-item-image" src="<%= product.product_image %>" alt="img">
+  <h5><strong><%= product.product_name %></strong> - <%= product.product_vendor %></h5>
+  <em><i class="fa fa-dollar"></i><%= product.unit_price %></em>
+
+
+
+  <a href="#" class="activity-item-toggle"><i class="fa fa-plus"></i></a>
+  <div class="activity-item-detail">
+    <!-- item quantity goes here -->
+    <%= product.product_description %><%= product.product_qty %>  <%= product.product_upc %> <%= product.product_number %>
+  <%= product.id %>
+
+<% end %>
