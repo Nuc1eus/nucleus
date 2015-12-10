@@ -4,6 +4,7 @@ class CategoriesController < ApplicationController
   get '/' do
     authorization_check
     @categories=Category.all
+    binding.pry
     erb :categories
   end
 

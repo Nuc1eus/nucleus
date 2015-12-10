@@ -1,1 +1,12 @@
 <p>Search page</p>
+
+<!--create dropdown form populated with options of every category type  -->
+<!-- pass the category_id user selects before they search through option value='@category.id' -->
+<form action="/search">
+  <select name="id">
+    <!-- loop through all the categories to populate the list of category possibilities -->
+    <% @categories.each do |category|%>
+      <option value="<%=category.id %>"><%= category.category_name %></option>
+    <% end %>
+  </select>
+</form>
