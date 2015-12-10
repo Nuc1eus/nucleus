@@ -13,8 +13,6 @@ require './controllers/setting'
 require './controllers/sell'
 require './controllers/search'
 
-
-
 map('/') {run ApplicationController}
 map('/login') {run AccountsController}
 map('/dash') {run ItemsController}

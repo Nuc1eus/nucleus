@@ -1,2 +1,3 @@
-# nucleus
-retail inventor application
+# Nucleus
+
+Mobile Retail Inventory Management System.
