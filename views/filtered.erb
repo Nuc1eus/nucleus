@@ -1,0 +1,13 @@
+<h1>here are you search results</h1>
+
+<% if @filtered.length==0 %>
+  <h2>Sorry couldnt find anything :/</h2>
+<% else %>
+  <h2>Here you go fine sir! :D</h2>
+  <% @filtered.each do |product|%>
+    <li> name: <%= product.product_name %> </li>
+    <li>description <%=product.product_description  %></li>
+    <li>price: <%= product.unit_price %></li>
+    <li>product vendor: <%= product.product_vendor %></li>
+  <% end %>
+<% end %>
