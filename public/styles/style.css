@@ -1,5 +1,23 @@
 /* Epsilon Framework Styles*/
 
+.button-group {
+width: 10px;
+height: 10px;
+padding: 3px;
+margin: 3px;
+  display:inline !important;
+}
+.button-group button {
+  background: none;
+  cursor: pointer;
+  cursor: hand;
+}
+.button-group .delete:hover {
+  color: #ab0f0f;
+}
+.button-group .edit:hover {
+  color: #0E4D9A;
+}
 .center {
   text-align: center;
 }

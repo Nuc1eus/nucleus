@@ -12,7 +12,7 @@ class AccountsController < ApplicationController
     if user
       p 'made it to if statement of user block'
       session[:current_user]=user
-      @messag=''
+      @message=''
       redirect '/dash'
     else
       p 'made it to the else statement of if user'
@@ -31,6 +31,7 @@ class AccountsController < ApplicationController
     end
     user = Account.create( user_name: params[:user_name], password: params[:password], name: params[:name], phone: params[:phone], email: params[:email])
     session[:current_user]=user
+    redirect '/dash'
   end
 
   get '/success' do

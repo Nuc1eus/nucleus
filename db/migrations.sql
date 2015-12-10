@@ -9,7 +9,7 @@ CREATE TABLE locations (
   sub_location  VARCHAR(255)
 );
 
-CREATE TABLE catergories (
+CREATE TABLE categories (
   id SERIAL PRIMARY KEY,
   category_name  VARCHAR(255),
   category_info VARCHAR(255),
@@ -18,7 +18,7 @@ CREATE TABLE catergories (
 
 CREATE TABLE products (
   id SERIAL PRIMARY KEY,
-  category_id INTEGER REFERENCES catergories(id),
+  category_id INTEGER REFERENCES categories(id),
   product_name VARCHAR(255),
   product_description VARCHAR(255),
   product_upc VARCHAR(255),

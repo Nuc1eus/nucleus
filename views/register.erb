@@ -20,6 +20,7 @@
             <div class="pageapp-signup bg-5 cover-screen">
                 <div class="pageapp-signup-content cover-center">
                     <div class="boxed-layout">
+
                         <a class="pageapp-signup-logo" href="#"></a>
                         <form action="/login/register" method="post">
                         <div class="pageapp-signup-field">
@@ -42,8 +43,9 @@
                             <i class="fa fa-envelope"></i>
                             <input onfocus="if (this.value=='Email Address') this.value = ''" onblur="if (this.value=='') this.value = 'Email Address'" type="email" value="Email Address" name="email">
                         </div>
-                        <input type="submit" class="pageapp-signup-button button button-small button-blue button-fullscreen" value="Register">
-                      </form>
+                        <input type="submit" class="pageapp-signup-button button button-small button-blue button-fullscreen" value="Register <%= @message %>">
+
+											</form>
 																			<a href="/" class="center">Cancel</a>
                     </div>
                 </div>

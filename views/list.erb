@@ -108,83 +108,78 @@
             <div class="content">
             <div class="header-clear-large"></div>
             <!--Page content goes here, fixed elements go above the all elements class-->
+						<div class="container">
+              <table id="table_id" class="display">
+                  <thead>
+                      <tr>
+                          <th>ID</th>
+                          <th>Name</th>
+                          <th>Vendor</th>
+                          <th>Product Number</th>
+                          <th>Description</th>
+                          <th>Price</th>
+                          <th>Quantity</th>
+                          <th>Options</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                  <% @products.each do |product| %>
+                      <tr>
+                          <td><%= product.id %></td>
+                          <td><%= product.product_name %></td>
+                          <td><%= product.product_vendor %></td>
+                          <td><%= product.product_number %></td>
+                          <td><%= product.product_description %></td>
+                          <td><%= product.unit_price %></td>
+                          <td><%= product.product_qty %></td>
+                          <td>
+                            <form class="button-group" action="/dash/update/<%= product.id %>" method='post'>
 
+                                    <button class="edit" type="submit"><i class="fa fa-pencil"></i></button>
 
+                             </form>
 
-                    <% @products.each do |product| %>
-                    <div class="activity-item material-container">
-                      <img class="activity-item-image" src="<%= product.product_image %>" alt="img">
-                      <h5><strong><%= product.product_name %></strong> - <%= product.product_vendor %></h5>
-                      <em><i class="fa fa-dollar"></i><%= product.unit_price %></em>
+                             <form class="button-group" action="/dash/sell/<%= product.id %>" method='post'>
 
+                                 <button class="delete" type="submit"><i class="fa fa-remove"></i></button>
 
-
-                      <a href="#" class="activity-item-toggle"><i class="fa fa-plus"></i></a>
-                      <div class="activity-item-detail">
-                        <!-- item quantity goes here -->
-                        <%= product.product_description %> Quantity: <%= product.product_qty %>  <%= product.product_upc %> <%= product.product_number %>
-                        <form action="/dash/update/<%= product.id %>" method='post'>
-                           <input class="button button-blue button-xs"type="submit" value="update">
-                         </form>
-
-                         <form action="/dash/sell/<%= product.id %>" method='post'>
-                           <input class="button button-blue button-xs"type="submit" value="delete">
-                         </form>
-
-                      </div>
-                  </div>
-                  <% end %>
-
-                <div class="clear"></div>
-
-                <div class="decoration"></div>
-
-
-                <div class="footer">
-                    <p class="center-text">Copyright 2015. All rights reserved.</p>
-                </div>
-
-            <!-- End of entire page content-->
+                             </form>
+                          </td>
+                      </tr>
+                      <% end %>
+                  </tbody>
+                </table>
+            </div>
+						<div class="clear"></div>
+						<div class="decoration"></div>
+						<div class="footer">
+							<p class="center-text">Copyright 2015. All rights reserved.</p>
+            </div>
             </div>
         </div>
     </div>
     <a href="#" class="back-to-top-badge"><i class="fa fa-caret-up"></i>Back to top</a>
 </div>
 
-<!--Fly up share box and notifications go here -->
-<!--These are the only features that should be placed outside the all-elements class-->
 
-<div class="top-notification-1 top-notification bg-blue-dark">
-    <h4>Did you know?</h4>
-    <p>
-        Easy way to make sure your messages get read!
-    </p>
-    <a href="#" class="close-top-notification"><i class="fa fa-times"></i></a>
-</div>
-<div class="bottom-notification-1 bottom-notification bg-green-dark">
-    <h4>Did you know?</h4>
-    <p>
-        Easy way to make sure your messages get read!
-    </p>
-    <a href="#" class="close-bottom-notification"><i class="fa fa-times"></i></a>
-</div>
-<div class="bottom-notification-2 bottom-notification bg-orange-dark timeout-notification">
-    <h4>Timeout: 5 Seconds</h4>
-    <p>
-        I'll go away on my own after a few seconds!
-    </p>
-</div>
-<div class="top-notification-2 top-notification bg-red-dark timeout-notification">
-    <h4>Timeout: 5 Seconds</h4>
-    <p>
-        I'll go away on my own after a few seconds!
-    </p>
-</div>
 
 <script>
-$().ready(function () {
-    $('.activity-item-image[src=""]').attr('src','https://image-gr.s3.envato.com/files/100902816/01_Preview.jpg');
-    $('.activity-item-image[src="Product Image URL"]').attr('src','https://image-gr.s3.envato.com/files/100902816/01_Preview.jpg');
-});
+// $().ready(function () {
+//     $('.activity-item-image[src=""]').attr('src','https://image-gr.s3.envato.com/files/100902816/01_Preview.jpg');
+//     $('.activity-item-image[src="Product Image URL"]').attr('src','https://image-gr.s3.envato.com/files/100902816/01_Preview.jpg');
+// });
+$(document).ready( function () {
+    $('#table_id').DataTable({
+          columnDefs: [ {
+              targets: [ 0 ],
+              orderData: [ 0, 1 ]
+          }, {
+              targets: [ 1 ],
+              orderData: [ 1, 0 ]
+          }, {
+              targets: [ 4 ],
+              orderData: [ 4, 0 ]
+          } ]
+      });
+} );
 </script>
-</body>

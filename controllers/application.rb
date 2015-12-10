@@ -34,6 +34,9 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+    if session[:current_user]
+      redirect '/dash'
+    end
     erb :login
   end
 
