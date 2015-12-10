@@ -1,5 +1,5 @@
-#mapped to '/location'
 class LocationsController < ApplicationController
+
   get '/' do
     authorization_check
     @locations=Location.all

@@ -1,6 +1,4 @@
-#mapped to '/dash'
 class ItemsController < ApplicationController
-
 
   get '/' do
     authorization_check
@@ -8,22 +6,21 @@ class ItemsController < ApplicationController
   end
 
   get '/add' do
-    authorization_check
     @categories=Category.all
+    authorization_check
     erb :add
   end
 
   post '/add' do
-
-    @product =Item.create(product_name: params[:product_name],product_description: params[:product_description], product_upc: params[:product_upc], product_number: params[:product_number], product_vendor: params[:product_vendor], unit_price: params[:unit_price], product_image: params[:product_image],category_id: params[:category_id], product_qty: params[:product_qty]);
     @categories=Category.all
     @products=Item.all
+    @product =Item.create(product_name: params[:product_name],product_description: params[:product_description], product_upc: params[:product_upc], product_number: params[:product_number], product_vendor: params[:product_vendor], unit_price: params[:unit_price], product_image: params[:product_image],category_id: params[:category_id], product_qty: params[:product_qty]);
     redirect '/dash/list'
   end
 
   get '/list' do
-    authorization_check
     @products=Item.all
+    authorization_check
     erb :list
   end
 
@@ -33,7 +30,6 @@ class ItemsController < ApplicationController
 
   get '/update/:id' do
     binding.pry
-    # erb :update
     p 'hello world!'
   end
 
@@ -52,7 +48,6 @@ class ItemsController < ApplicationController
 
   post '/confirmation' do
     @product =Item.create(product_name: params[:product_name],product_description: params[:product_description], product_upc: params[:product_upc], product_number: params[:product_number], product_vendor: params[:product_vendor], unit_price: params[:unit_price], product_image: params[:product_image]);
-
     erb :confirmation
   end
 
@@ -61,8 +56,5 @@ class ItemsController < ApplicationController
     @item.destroy
     p 'item destroyed'
   end
-
-
-
 
 end
