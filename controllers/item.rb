@@ -32,7 +32,9 @@ class ItemsController < ApplicationController
   end
 
   get '/update/:id' do
-    erb :update
+    binding.pry
+    # erb :update
+    p 'hello world!'
   end
 
   post '/update/:id' do
