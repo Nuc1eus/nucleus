@@ -12,9 +12,11 @@ class AccountsController < ApplicationController
     if user
       p 'made it to if statement of user block'
       session[:current_user]=user
+      @messag=''
       redirect '/dash'
     else
       p 'made it to the else statement of if user'
+      @message='username password combo incorrect, please try again'
       erb :login
     end
   end
