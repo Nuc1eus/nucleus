@@ -2,11 +2,20 @@
 
 <!--create dropdown form populated with options of every category type  -->
 <!-- pass the category_id user selects before they search through option value='@category.id' -->
-<form action="/search">
+<form action="/search/">
   <select name="id">
     <!-- loop through all the categories to populate the list of category possibilities -->
     <% @categories.each do |category|%>
-      <option value="<%=category.id %>"><%= category.category_name %></option>
+      <option><%= category.category_name %></option>
     <% end %>
+
   </select>
+
+  <input type="submit" value='seach!'>
 </form>
+
+<script>
+  $(document).ready(function(){
+    console.log('Hello World!');
+  })
+</script>

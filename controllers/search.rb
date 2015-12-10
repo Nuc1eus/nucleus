@@ -9,8 +9,8 @@ class SearchController < ApplicationController
     #return all items that have a category_id of selected id
     id=params[:id]
     @category=Category.find(id)
-
     @items=Item.all
+    binding.pry
     return params.to_json
   end
 
