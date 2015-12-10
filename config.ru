@@ -11,6 +11,7 @@ require './models/location'
 require './controllers/location'
 require './controllers/setting'
 require './controllers/sell'
+require './controllers/search'
 
 
 
@@ -21,3 +22,4 @@ map('/categories') {run CategoriesController}
 map('/locations') {run LocationsController}
 map('/settings') {run SettingsController}
 map('/sell') {run SalesController}
+map('/search') {run SearchController}
