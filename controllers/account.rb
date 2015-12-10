@@ -5,7 +5,11 @@ class AccountsController < ApplicationController
     erb :not_authorized
   end
 
+#if user is already logged in nav to /login resource will redirect to dash resource
   get '/' do
+    if session[:current_user]
+      redirect '/dash'
+    end
     erb :login
   end
 
@@ -39,9 +43,6 @@ class AccountsController < ApplicationController
     user = Account.create( user_name: params[:user_name], password: params[:password], name: params[:name], phone: params[:phone], email: params[:email])
     session[:current_user]=user
     # redirect '/success'
-    @users=Account.all
-    return @users.to_json
-
   end
 
   get '/success' do
