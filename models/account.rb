@@ -13,7 +13,7 @@ class Account < ActiveRecord::Base
   def self.authenticate(user_name, password)
     current_user = Account.find_by(user_name: user_name)
 
-    if (current_user.password == password)
+    if (current_user !=nil && current_user.password == password)
       return current_user
     else
       return nil
