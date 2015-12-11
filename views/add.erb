@@ -143,6 +143,13 @@
                       <% end %>
                     </select>
                   </div>
+									<div>
+										<select name='location_id'>
+											<% @locations.each do |location|  %>
+											<option value='<%= location.id %>'><%= location.location_name %></option>
+											<% end %>
+										</select>
+									</div>
                   <div >
 
                       <input onfocus="if (this.value=='Product Description') this.value = ''" onblur="if (this.value=='') this.value = 'Product Description'" type="text" value="Product Description" name="product_description">

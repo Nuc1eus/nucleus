@@ -108,28 +108,31 @@
             <div class="content">
             <div class="header-clear-large"></div>
             <!--Page content goes here, fixed elements go above the all elements class-->
-						<div class="container">
-              <table id="table_id" class="display compact">
+							<div class="container">
+              <table id="table_id" class="display">
                   <thead>
                       <tr>
                           <th>ID</th>
                           <th>Name</th>
                           <th>Vendor</th>
-                          <th>Product Number</th>
-                          <th>Description</th>
+                          <th>Category</th>
+                          <th>Location</th>
                           <th>Price</th>
                           <th>Quantity</th>
                           <th>Options</th>
                       </tr>
                   </thead>
                   <tbody>
+
                   <% @products.each do |product| %>
+                  <% @category_id=Category.find(product.category_id) %>
+                  <% @location_id=Location.find(product.location_id) %>
                       <tr>
                           <td><%= product.id %></td>
                           <td><%= product.product_name %></td>
                           <td><%= product.product_vendor %></td>
-                          <td><%= product.product_number %></td>
-                          <td><%= product.product_description %></td>
+                          <td><%= @category_id.category_name %></td>
+                          <td><%= @location_id.location_name %></td>
                           <td><%= product.unit_price %></td>
                           <td><%= product.product_qty %></td>
                           <td>
