@@ -112,8 +112,19 @@
 								<div class="container material-container">
                   <form action="/dash/update" method='post'>
                     <input type="hidden" name="id" value="<%=@product.id%>">
-										<input type="text" name='category_id' value='<%= @product.category_id %>'>
-										<input type="text" name='location_id' value='<%= @product.location_id %>'>
+
+										<select name="category_id">
+											<% @categories.each do |category| %>
+												<option value="<%= category.id  %>"><%= category.category_name  %></option>
+											<% end %>
+										</select>
+
+										<select name="location_id">
+											<% @locations.each do |location| %>
+												<option value="<%= location.id %>"><%= location.location_name %></option>
+											<% end %>
+										</select>
+
                     <input type="text" name='product_name' value='<%= @product.product_name %>'>
                     <input type="text" name='product_description' value="<%= @product.product_description %>">
                     <input type="text" name='product_number' value="<%= @product.product_number %>">
