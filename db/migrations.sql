@@ -5,7 +5,7 @@
     id SERIAL PRIMARY KEY,
     location_name VARCHAR(255),
     location_desc VARCHAR(255),
-    location_image VARCHAR(255),
+    location_image TEXT,
     sub_location  VARCHAR(255)
   );
 
@@ -13,7 +13,7 @@
     id SERIAL PRIMARY KEY,
     category_name  VARCHAR(255),
     category_info VARCHAR(255),
-    category_image VARCHAR(255)
+    category_image TEXT
   );
 
   CREATE TABLE products (
@@ -26,7 +26,7 @@
     product_number INTEGER,
     product_vendor VARCHAR(255),
     unit_price  INTEGER,
-    product_image VARCHAR(255),
+    product_image TEXT,
     product_qty INTEGER
   );
 
