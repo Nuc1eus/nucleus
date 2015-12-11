@@ -136,9 +136,8 @@
                           <td><%= product.unit_price %></td>
                           <td><%= product.product_qty %></td>
                           <td>
-                            <form class="button-group" action="/dash/update/<%= product.id %>" method='post'>
-                                    <button class="edit" type="submit"><i class="fa fa-pencil"></i></button>
-                             </form>
+                          <a class="edit" href="/dash/update/<%= product.id %>"><i class="fa fa-pencil"></i></a>
+
 
                              <form class="button-group" action="/dash/sell/<%= product.id %>" method='post'>
                                  <button class="delete" type="submit"><i class="fa fa-remove"></i></button>
